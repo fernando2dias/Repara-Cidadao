@@ -1,0 +1,16 @@
+{% extends '../usuarios/base.html' %}
+{% block conteudo %}
+<div class="container">
+    <h1>Reparos Cadastrados:</h1>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>Lista de Reparos</th>
+        </tr>
+        {% for reparo in reparos %}
+        <tr>
+            <td>{{reparo.reparo}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
