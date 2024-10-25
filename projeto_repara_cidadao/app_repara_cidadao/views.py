@@ -2,8 +2,8 @@ from django.shortcuts import render
 from .models import Usuario, Reparo  # Importação mais concisa
 
 
-def home(request):
-    return render(request, 'usuarios/home.html')
+def cadastro(request):
+    return render(request, 'usuarios/cadastro.html')
 
 
 def usuarios(request):
