@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from .models import Usuario, Reparo  # Importação mais concisa
 
+def home (request):
+    return render (request, 'home.html')
+
 
 def cadastro(request):
     return render(request, 'usuarios/cadastro.html')
@@ -23,6 +26,7 @@ def usuarios(request):
         novo_usuario.estado = request.POST.get('estado')
         novo_usuario.cep = request.POST.get('cep')
         novo_usuario.save()
+
 
     # Exibir todos os usuários já cadastrados em uma nova página 
     usuarios = {
