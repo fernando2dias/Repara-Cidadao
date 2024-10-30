@@ -1,5 +1,9 @@
-from django.shortcuts import render
+from lib2to3.fixes.fix_input import context
+
+from django.shortcuts import render, redirect
+
 from .models import Usuario, Reparo  # Importação mais concisa
+from .forms import ReparoModelForm
 
 def home (request):
     return render (request, 'home.html')
@@ -35,28 +39,23 @@ def usuarios(request):
     
     return render(request, 'usuarios/usuarios.html', usuarios)
 
-
-def formulario_reparos(request):
-    return render(request, 'reparos/reparos.html')
+def cadastro_reparo(request):
+    return render(request, 'reparos/cadastro-reparo.html')
 
 
 def lista_reparos(request):
-    # Salvar os dados da tela para o banco de dados.
     if request.method == 'POST':
-        novo_reparo = Reparo()
-        novo_reparo.reparo = request.POST.get('reparo')
-        novo_reparo.rua = request.POST.get('rua')
-        novo_reparo.numero = request.POST.get('numero')
-        novo_reparo.bairro = request.POST.get('bairro')
-        novo_reparo.cidade = request.POST.get('cidade')
-        novo_reparo.estado = request.POST.get('estado')
-        novo_reparo.cep = request.POST.get('cep')
-        novo_reparo.save()
+        form = ReparoModelForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('lista_reparos')
+    else:
+        form = ReparoModelForm()
 
-    # Exibir todos os reparos cadastrados
-    listagem_reparos = {
-        'reparos': Reparo.objects.all()
+    reparos = {
+        'lista_reparos': Reparo.objects.all(),
+        'form': form
     }
-    
-    return render(request, 'reparos/lista_reparos.html', listagem_reparos)
+    return render(request, 'reparos/lista_reparos.html', reparos)
+
 
