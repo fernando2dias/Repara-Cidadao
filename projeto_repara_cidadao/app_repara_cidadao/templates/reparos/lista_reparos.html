@@ -4,6 +4,7 @@
     <h1>Reparos Cadastrados:</h1>
     <table class="table table-bordered table-striped">
         <tr>
+            <th>imagem</th>
             <th>reparo</th>
             <th>rua</th>
             <th>numero</th>
@@ -11,6 +12,7 @@
         </tr>
         {% for reparo in reparos %}
         <tr>
+            <th>{{reparo.imagem}}</th>
             <td>{{reparo.reparo}}</td>
             <td>{{reparo.rua}}</td>
             <td>{{reparo.numero}}</td>

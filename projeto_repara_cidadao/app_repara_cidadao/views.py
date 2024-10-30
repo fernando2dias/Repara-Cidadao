@@ -53,8 +53,7 @@ def lista_reparos(request):
         form = ReparoModelForm()
 
     reparos = {
-        'lista_reparos': Reparo.objects.all(),
-        'form': form
+        'reparos': Reparo.objects.all(),
     }
     return render(request, 'reparos/lista_reparos.html', reparos)
 
