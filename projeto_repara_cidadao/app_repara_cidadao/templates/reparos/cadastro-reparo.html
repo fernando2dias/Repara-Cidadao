@@ -1,13 +1,14 @@
-{% extends '../usuarios/base.html' %}
+{% extends 'usuarios/base.html' %}
 {% block conteudo %}
-<form action="{% url 'listagem_reparos' %}" method="post">
+<form action="{% url 'lista_reparos' %}" method="post" class="form" autocomplete="off" enctype="multipart/form-data">
   {% csrf_token %}
+  {{ form.as_p }}
   <div style="text-align:center;" class="container">
     <h1>Cadastro de Reparos</h1>
     <div class="container">
       <div class="row align-items-start">
         <div class="col-6">
-          <label for="reparo" class="form-label">Reparo Necessário</label>
+          <label for="reparo" class="form-label">Reparo</label>
           <input type="text" id="reparo" class="form-control" placeholder="Descreva o reparo necessário aqui" name="reparo">
         </div>
         <div class="col-6">
@@ -16,7 +17,7 @@
         </div>
         <div class="col-6">
           <label for="numero" class="form-label">Número</label>
-          <input type="text" id="mumero" class="form-control" placeholder="Escreva o número de sua casa aqui" name="numero">
+          <input type="text" id="numero" class="form-control" placeholder="Escreva o número de sua casa aqui" name="numero">
         </div>
         <div class="col-6">
           <label for="bairro" class="form-label">Bairro</label>
@@ -32,12 +33,26 @@
         </div>
         <div class="col-6">
           <label for="cep" class="form-label">CEP</label>
-          <input type="CEP" id="cep" class="form-control" placeholder="Escreva seu cep aqui" name="cep">
+          <input type="text" id="cep" class="form-control" placeholder="Escreva seu cep aqui" name="cep">
+        </div>
+        <div class="col-6">
+          <label for="referencia" class="form-label">Referência</label>
+          <input type="text" id="referencia" class="form-control" placeholder="Deixe uma referência aqui" name="referencia">
+        </div>
+        <div class="mb-3">
+          <label for="imagem" class="form-label">Imagem</label>
+          <input class="form-control" type="file" id="imagem" name="imagem">
         </div>
         <div><button class="form-control-sm">Enviar</button></div>
      </div>
     </div>
   </div>
   </div>
- </form>   
+</form>
 {% endblock %}
+
+
+
+
+
+

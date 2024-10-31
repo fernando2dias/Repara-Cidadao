@@ -4,13 +4,50 @@
     <h1>Reparos Cadastrados:</h1>
     <table class="table table-bordered table-striped">
         <tr>
-            <th>Lista de Reparos</th>
+            <th>Data</th>
+            <th>Reparo</th>
+            <th>Rua</th>
+            <th>Bairro</th>
+            <th>Numero</th>
+            <th>Cidade-UF</th>
+
         </tr>
         {% for reparo in reparos %}
-        <tr>
-            <td>{{reparo.reparo}}</td>
-        </tr>
-        {% endfor %}
+<tr>
+    <td>{{ reparo.data }}</td>
+    <td><a href="#modal{{ reparo.id_reparo }}" data-toggle="modal"> {{ reparo.reparo }}</a></td>
+    <td>{{ reparo.rua }}</td>
+    <td>{{ reparo.bairro }}</td>
+    <td>{{ reparo.numero }}</td>
+    <td>{{ reparo.cidade }} / {{ reparo.estado }}</td>
+</tr>
+{% endfor %}
+
+{% for reparo in reparos %}
+<div class="modal fade" id="modal{{ reparo.id_reparo }}" tabindex="-1" role="dialog" aria-labelledby="modalLabel{{ reparo.id_reparo }}" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel{{ reparo.id_reparo }}">{{ reparo.reparo }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="dynamic-content">
+                {% if reparo.imagem %}
+                    <img src="{{ reparo.imagem.url }}" class="img-fluid" alt="reparo"/>
+                {% else %}
+                    <p>Sem imagem disponível</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
     </table>
 </div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 {% endblock %}
