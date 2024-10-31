@@ -4,16 +4,22 @@
     <h1>Reparos Cadastrados:</h1>
     <table class="table table-bordered table-striped">
         <tr>
-            <th>reparo</th>
-            <th>rua</th>
-            <th>numero</th>
+            <th>Data</th>
+            <th>Reparo</th>
+            <th>Rua</th>
+            <th>Bairro</th>
+            <th>Numero</th>
+            <th>Cidade-UF</th>
 
         </tr>
         {% for reparo in reparos %}
 <tr>
+    <td>{{ reparo.data }}</td>
     <td><a href="#modal{{ reparo.id_reparo }}" data-toggle="modal"> {{ reparo.reparo }}</a></td>
     <td>{{ reparo.rua }}</td>
+    <td>{{ reparo.bairro }}</td>
     <td>{{ reparo.numero }}</td>
+    <td>{{ reparo.cidade }} / {{ reparo.estado }}</td>
 </tr>
 {% endfor %}
 

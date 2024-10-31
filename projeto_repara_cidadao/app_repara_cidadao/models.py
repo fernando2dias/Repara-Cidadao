@@ -22,6 +22,7 @@ class Usuario(models.Model):
     
 class Reparo(models.Model):
     id_reparo = models.AutoField(primary_key=True)
+    data = models.DateField('Data de Criação', auto_now_add=True)
     reparo = models.CharField(max_length=255)
     rua = models.CharField(max_length=255, null=True, blank= True)
     numero = models.CharField(max_length=10, null=True, blank= True)
