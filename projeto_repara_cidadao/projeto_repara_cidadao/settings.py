@@ -38,8 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "app_repara_cidadao",
-    "django_bootstrap5",
-    "stdimage",
+    "django_bootstrap5"
 ]
 
 MIDDLEWARE = [
