@@ -31,7 +31,7 @@ class Reparo(models.Model):
     estado = models.CharField(max_length=100, default='São Paulo')
     cep = models.CharField(max_length=10, null=True, blank= True, default = '00000-000')
     referencia = models.CharField(max_length=255, blank = True)
-    imagem = models.ImageField(upload_to='imagens/', blank=True, null=True)
+    imagem = models.ImageField(upload_to='reparos/', blank=True, null=True)
 
     def __str__(self):
         return f"{self.reparo} - {self.rua}, {self.numero}"
