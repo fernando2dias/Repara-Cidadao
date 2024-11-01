@@ -4,52 +4,81 @@
   {% csrf_token %}
   {{ form.as_p }}
   <div style="text-align:center;" class="container">
-    <h1>Cadastro de Reparos</h1>
+    <h1 class="titulo-interno"><span style='font-size:40px;'>&#128221;</span>Cadastro de Reparos</h1>
     <div class="container">
       <div class="row align-items-start">
-        <div class="col-6">
+        <div class="col-6 text-start">
           <label for="reparo" class="form-label">Reparo</label>
           <input type="text" id="reparo" class="form-control" placeholder="Descreva o reparo necessário aqui" name="reparo">
         </div>
-        <div class="col-6">
+        <div class="col-6 text-start">
           <label for="rua" class="form-label">Rua</label>
           <input type="text" id="rua" class="form-control" placeholder="Escreva sua rua aqui" name="rua">
         </div>
-        <div class="col-6">
+        <div class="col-6 text-start">
           <label for="numero" class="form-label">Número</label>
           <input type="text" id="numero" class="form-control" placeholder="Escreva o número de sua casa aqui" name="numero">
         </div>
-        <div class="col-6">
+        <div class="col-6 text-start">
           <label for="bairro" class="form-label">Bairro</label>
           <input type="text" id="bairro" class="form-control" placeholder="Escreva seu bairro aqui" name="bairro">
         </div>
-        <div class="col-6">
+        <div class="col-6 text-start">
           <label for="cidade" class="form-label">Cidade</label>
           <input type="text" id="cidade" class="form-control" placeholder="Escreva sua cidade aqui" name="cidade">
         </div>
-        <div class="col-6">
+        <div class="col-6 text-start">
           <label for="estado" class="form-label">Estado</label>
-          <input type="text" id="estado" class="form-control" placeholder="Escreva seu estado aqui" name="estado">
+          <select id="estado" class="form-select" name="estado">
+        <option selected disabled>Selecione o estado</option>
+        <option value="AC">Acre</option>
+        <option value="AL">Alagoas</option>
+        <option value="AP">Amapá</option>
+        <option value="AM">Amazonas</option>
+        <option value="BA">Bahia</option>
+        <option value="CE">Ceará</option>
+        <option value="DF">Distrito Federal</option>
+        <option value="ES">Espírito Santo</option>
+        <option value="GO">Goiás</option>
+        <option value="MA">Maranhão</option>
+        <option value="MT">Mato Grosso</option>
+        <option value="MS">Mato Grosso do Sul</option>
+        <option value="MG">Minas Gerais</option>
+        <option value="PA">Pará</option>
+        <option value="PB">Paraíba</option>
+        <option value="PR">Paraná</option>
+        <option value="PE">Pernambuco</option>
+        <option value="PI">Piauí</option>
+        <option value="RJ">Rio de Janeiro</option>
+        <option value="RN">Rio Grande do Norte</option>
+        <option value="RS">Rio Grande do Sul</option>
+        <option value="RO">Rondônia</option>
+        <option value="RR">Roraima</option>
+        <option value="SC">Santa Catarina</option>
+        <option value="SP">São Paulo</option>
+        <option value="SE">Sergipe</option>
+        <option value="TO">Tocantins</option>
+    </select>
         </div>
-        <div class="col-6">
+        <div class="col-6 text-start">
           <label for="cep" class="form-label">CEP</label>
           <input type="text" id="cep" class="form-control" placeholder="Escreva seu cep aqui" name="cep">
         </div>
-        <div class="col-6">
+        <div class="col-6 text-start">
           <label for="referencia" class="form-label">Referência</label>
           <input type="text" id="referencia" class="form-control" placeholder="Deixe uma referência aqui" name="referencia">
         </div>
-        <div class="mb-3">
+        <div class="mb-3 text-start">
           <label for="imagem" class="form-label">Imagem</label>
           <input class="form-control" type="file" id="imagem" name="imagem">
         </div>
-        <div><button class="form-control-sm">Enviar</button></div>
+        <div class="text-end"><button class="btn btn-primary">Enviar</button></div>
      </div>
     </div>
   </div>
-  </div>
 </form>
 {% endblock %}
+
 
 
 

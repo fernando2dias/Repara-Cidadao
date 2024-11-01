@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
 
-    <title>Cadastre-me!</title>
+    <title>Repara Cidadão</title>
   </head>
   <body>
     <div class="header interno">
@@ -32,12 +32,57 @@
             <div>login</div><!--login-->
             </div>
     </div><!--header-->
+    <div class="conteudo">
     {% block conteudo %}
 
 
     
     {% endblock %}
-      
+    </div>
+
+    <!-- Footer -->
+<footer class="bg-dark text-light pt-4">
+    <div class="container">
+        <!-- Primeira linha com links de navegação -->
+        <div class="row">
+            <div class="col-md-4 align-items-start">
+                <div class="text-center">
+                <h5><img src="{% static 'images/logo-menor.png' %}" alt="Logo"></h5>
+                <h6>Seja a Mudança que você quer <br>ver na Sua Cidade!</h6>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h5>Navegação</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-light">Início</a></li>
+                    <li><a href="#" class="text-light">Serviços</a></li>
+                    <li><a href="#" class="text-light">Contato</a></li>
+                    <li><a href="#" class="text-light">Blog</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Desenvolvido por</h5>
+                <ul class="list-unstyled">
+                    <li>Felipe Vieira Campos - RA 234969</li>
+                    <li>Juliana Michelsen - RA 234970</li>
+                    <li>Kaun Felipe Arena Oliveira - RA 236372</li>
+                    <li>Rafael Muniz de Castro - RA 236180</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <!-- Linha com direitos autorais -->
+        <div class="row mt-3">
+            <div class="col text-center">
+                <p class="mb-0">&copy; 2024 Repera Cidadão. Todos os direitos reservados.<br>
+                Projeto Universitário da turma de Analises de Sistemas - Facens
+                </p>
+            </div>
+        </div>
+    </div>
+    <br>
+</footer>
 
     
  
