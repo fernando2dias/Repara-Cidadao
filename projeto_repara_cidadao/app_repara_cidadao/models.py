@@ -16,11 +16,19 @@ class Usuario(models.Model):
     estado = models.CharField(max_length=100, default='São Paulo')
     cep = models.CharField(max_length=10, blank= True)
     referencia = models.CharField(max_length=255, blank = True)
+
     
     def __str__(self):
         return "{self.nome} {self.idade}"
     
 class Reparo(models.Model):
+
+    STATUS_CHOICES = [
+        ('pendente', 'Pendente'),
+        ('em_andamento', 'Em andamento'),
+        ('concluido', 'Concluído'),
+    ]
+
     id_reparo = models.AutoField(primary_key=True)
     data = models.DateField('Data de Criação', auto_now_add=True)
     reparo = models.CharField(max_length=255)
@@ -33,6 +41,7 @@ class Reparo(models.Model):
     cep = models.CharField(max_length=10, null=True, blank= True, default = '00000-000')
     referencia = models.CharField(max_length=255, blank = True)
     imagem = models.ImageField(upload_to='reparos/', blank=True, null=True)
+    status = models.CharField(max_length=15, choices=STATUS_CHOICES, default='pendente')
 
     def __str__(self):
-        return f"{self.reparo} - {self.rua}, {self.numero}"
+        return f"{self.reparo} - {self.rua}, {self.numero}, {self.status}"

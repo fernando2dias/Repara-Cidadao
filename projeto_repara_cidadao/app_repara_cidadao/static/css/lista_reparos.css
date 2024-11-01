@@ -1,0 +1,14 @@
+.status-pendente {
+    color: orange !important;
+    font-weight: bold;
+}
+
+.status-em-andamento {
+    color: blue !important;
+    font-weight: bold;
+}
+
+.status-concluido {
+    color: green !important;
+    font-weight: bold;
+}
