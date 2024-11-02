@@ -19,7 +19,7 @@ class Usuario(models.Model):
 
     
     def __str__(self):
-        return "{self.nome} {self.idade}"
+        return f"{self.nome} {self.sobrenome}"
     
 class Reparo(models.Model):
 
@@ -44,4 +44,4 @@ class Reparo(models.Model):
     status = models.CharField(max_length=15, choices=STATUS_CHOICES, default='pendente')
 
     def __str__(self):
-        return f"{self.reparo} - {self.rua}, {self.numero}, {self.status}"
+        return f"{self.reparo} - {self.rua}, {self.numero}, {self.bairro}, {self.status}"
